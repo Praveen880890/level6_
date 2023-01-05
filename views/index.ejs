@@ -5,12 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/style.css" rel="stylesheet">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My todo-manager</title>
 </head>
 <body>
-   <%- include('header.ejs') %>
+  <div class="grid grid-cols-6">
+    <div class="col-start-3 col-span-2">
+      <%- include("header.ejs") %>
+      <form>
+        <div class="flex gap-2 py-4">
+          <div class="flex-auto">
+            <input type="text" placeholder="What's next?" class="border border-gray-300 rounded text-gray-900 w-full p-2 text-sm" required/>
+          </div>
+          <div class="flex-auto">
+            <input type="date" class="border border-grey-300 rounded text-gray-900 w-full p-2 text-sm leading-4" />
+          </div>
+          <div class="flex-none">
+            <button type="submit" class="bg-green-600 text-white px-5 py-1.5 rounded font-medium mr-2 mb-2">Add </button>
+          </div>
+        </div>
+      </form>
+      <div>
+        <%- include('todo.ejs') %>
+      </div>
+    </div>
+  </div>
    
-   <table border="1">
+   
+   <!-- 
+    <table border="1"> 
     <tr>
       <th>ID</th>
       <th>Title</th>
@@ -25,7 +48,7 @@
         <td><%= allTodos[i].completed %></td>
       </tr>
     <% } %>
-  </table>
-   <%- include('footer.ejs') %>
+  </table> 
+   <%- include('footer.ejs') %> -->
 </body>
 </html>
