@@ -2,6 +2,6 @@ body{
     background-color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.Todo-Item:hover .trash-icon {
+.Todo-Item:hover .delete-icon{
     display: block;
 } 
