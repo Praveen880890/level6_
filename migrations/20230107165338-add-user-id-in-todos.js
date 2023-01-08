@@ -3,6 +3,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    try{
+
+      await queryInterface.addColumn("Todos", "userId", {
+        type: Sequelize.DataTypes.INTEGER,
+      });
+    }
+    catch (error) {
+      console.log(error);
+    }
     await queryInterface.addConstraint("Todos", {
       fields: ["userId"],
       type: "foreign key",
